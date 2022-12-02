@@ -1,0 +1,119 @@
+    
+"""
+def gradientRect( window, left_colour, right_colour, target_rect ):
+    Draw a horizontal-gradient filled rectangle covering <target_rect> 
+    colour_rect = pygame.Surface( ( 2, 2 ) )                                   # tiny! 2x2 bitmap
+    pygame.draw.line( colour_rect, left_colour,  ( 0,0 ), ( 0,1 ) )            # left colour line
+    pygame.draw.line( colour_rect, right_colour, ( 1,0 ), ( 1,1 ) )            # right colour line
+    colour_rect = pygame.transform.smoothscale( colour_rect, ( target_rect.width, target_rect.height ) )  # stretch!
+    window.blit( colour_rect, target_rect )                                    # paint it
+"""
+class Key():
+    def __init__(self,x,y,color1,color2,key):
+        self.x = x
+        self.y = y
+        self.color1 = color1
+        self.color2 = color2
+        self.key=key
+        self.rect = pygame.Rect(self.x,self.y,100, 20)
+        self.handled = False
+
+class Lane():
+     def __init__(self,x,y,color):
+        self.x = x
+        self.y = y
+        self.color = color
+        self.rect = pygame.Rect(self.x,self.y,50, 500)
+class Lane_Outline():
+     def __init__(self,x,y,color):
+        self.x = x
+        self.y = y
+        self.color = color
+        self.rect = pygame.Rect(self.x-4,self.y,8,500)
+
+
+
+keys = [
+    Key(100,500,(255,50,50),(200,0,0),pygame.K_a),
+    Key(200,500,(80,255,80),(0,200,0),pygame.K_s),
+    Key(300, 500,(40,40,255),(0,0,200),pygame.K_d),
+    Key(400,500,(255,255,120),(200,200,0),pygame.K_f),
+]
+
+lanes = [
+    Lane(100, 0, (40,40,40),),
+    Lane(200, 0, (40,40,40),),
+    Lane(300, 0, (40,40,40),),
+    Lane(400, 0, (40,40,40),),
+]
+lanesTwo = [
+    Lane(150, 0, (40,40,40),),  
+    Lane(250, 0, (40,40,40),),
+    Lane(350, 0, (40,40,40),),
+    Lane(450, 0, (40,40,40),),
+]
+laneOutlines = [
+    Lane_Outline(200, 0, (100,100,100),),
+    Lane_Outline(300, 0, (100,100,100),),
+    Lane_Outline(400, 0, (100,100,100),),
+]
+
+
+    #for lane in lanes:
+   #     gradientRect(screen,lane.color,(0,0,0),lane.rect)
+    #for lane in lanesTwo:
+    #    gradientRect(screen,(0,0,0,),lane.color,(lane.rect))
+    #for lane in laneOutlines:
+    #    pygame.draw.rect(screen, lane.color,lane.rect)
+    #for key in keys:
+    #    if k[key.key]:
+    #        pygame.draw.rect(screen,key.color1, key.rect)
+    #        key.handled = True
+    #    if not k[key.key]:
+    #        pygame.draw.rect(screen,key.color2, key.rect)
+    #        key.handled = False
+    #for i in range(len(map_directions)):
+    """" 
+   print(str(len(mapObj)) +"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print(len(testObj))
+    delList = []
+    for obj in range(len(mapObj)):
+        
+        print("LENGTH MAP OBJ " + str(len(mapObj)))
+        print("LENGTH TEST OBJ " + str(len(testObj)))
+        print(obj)
+        print("RECT" + str(testObj[obj][0]))
+        rect = testObj[obj][0]
+        directions = testObj[obj][1]
+        print(rect, directions)
+        print()
+        pygame.draw.rect(screen, (200,0,0),rect)
+        #print(directions)
+        if directions == 0:
+            rect.x += speed
+            rectTracker = rect.centerx
+            bounds = width +100
+        if directions == 1:
+            rect.y += speed
+            rectTracker = rect.centery
+            bounds = height +100
+        if directions == 2:
+            rect.x -= speed
+            rectTracker = rect.centerx
+            bounds = width +100
+        if directions == 3:
+            rect.y -= speed
+            rectTracker = rect.centerx
+            bounds = height + 100
+        valueY = rect.y
+        valueX = rect.x
+       
+        for key in keys:
+            if rectTracker > 500 and rectTracker < 520 and key.rect.centerx == centerRect and key.handled:
+                map_rect.remove(rect)
+                key.handled = True
+                break
+        if abs(rectTracker) > bounds:
+            delList.append(obj)
+    print(delList)
+    """

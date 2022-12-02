@@ -1,0 +1,10 @@
+Column 1 'x' = 125
+Column 2 'x' = 225
+Column 1 'x' = 325
+Column 2 'x' = 425
+key top = 500
+key bottom = 520
+
+
+class help:
+need to figure out how to repeatedly read through a list (ie. txt file) and then use that to fill out an asteroid class with all of its info 

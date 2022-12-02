@@ -1,0 +1,10 @@
+
+3. Bullets with directionality/make them actually move
+    it might be worth immediately starting with the quad direction and using the asteroid mvt code
+4. sync audio and asteroid shooting
+5. Dif types of asteroids
+6. Fix menu
+7. Game end returning to menu
+8. pause menu
+9. options
+10. Plasma?
